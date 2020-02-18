@@ -1,6 +1,6 @@
-pk接口文档(v.200217)
+pk接口文档(v.200218)
 =
-文档内容最后更新于：2020-02-17 
+文档内容最后更新于：2020-02-18 
 
 特别注意：
 -
@@ -199,7 +199,7 @@ iv.请求参数
 2.查询订单接口
 
 i.使用场景：查询订单信息。<br>
-ii.请求方式：POST
+ii.请求方式：POST<br>
 iii.请求地址：网关地址+ /cat-pay/open/orde/query<br>
 iv.请求参数
 <table>
@@ -301,6 +301,28 @@ iv.请求参数
 <td>商户订单编号</td>
 </tr>
 <tr>
+<td>orderStatus</td>
+<td>是</td>
+<td>整数</td>
+<td>50</td>
+<td>订单状态，请参考订
+单状态枚举</td>
+</tr>
+<tr>
+<td>payStatus</td>
+<td>否</td>
+<td>整数</td>
+<td>30</td>
+<td>支付状态，请参考支付状态枚举</td>
+</tr>
+<tr>
+<td>payMode</td>
+<td>是</td>
+<td>字符串</td>
+<td>ebank</td>
+<td>支付模式</td>
+</tr>
+<tr>
 <td>payNo</td>
 <td>否</td>
 <td>字符串</td>
@@ -326,7 +348,14 @@ iv.请求参数
 <td>是</td>
 <td>字符串</td>
 <td>$2a$10$JwOX9nmVHrE6o8vcoSmyd.T6...</td>
-<td>参数签名，使用BCrypt校验方法校验</td>
+<td>参数签名，使用MD5校验方法校验</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>是</td>
+<td>整数</td>
+<td>1575948756</td>
+<td>商户订单时间戳（秒级）</td>
 </tr>
 </tbody>
 </table>
