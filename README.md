@@ -47,11 +47,11 @@ amount=100&merchantNo=20200113185052721173545318&notifyUrl=https%3A%2F%2Fwww.bai
 2.MD5(originalStr + "&key=" + apiKey)
 i.用MD5算法将“originalStr + "&key=" + apiKey”进行签名得到签名信息
 
-2.php demo
+3.php demo
 
-3.java demo
+4.java demo
 
-4.c# demo
+5.c# demo
 
 同步通知 （returnUrl）
 -
