@@ -46,3 +46,40 @@ amount=100&merchantNo=20200113185052721173545318&notifyUrl=https%3A%2F%2Fwww.bai
 
 2.MD5(originalStr + "&key=" + apiKey)
 i.用MD5算法将“originalStr + "&key=" + apiKey”进行签名得到签名信息
+
+2.php demo
+
+3.java demo
+
+4.c# demo
+
+同步通知 （returnUrl）
+-
+当创建订单时传入返回地址，订单结束后，用户点击“返回商户”，会在返回链接带上参数（returnUrl?urlparams）。参数内容参考统一返回参数，可通过签名算法计算签名的正确性。例：<br>
+returnUrl?<br>
+
+    amount=100&
+    
+    bankName=广发银行&
+    
+    bankNo=62146202210026980&
+    
+    merchantNo=20200113185052721173545318&
+    
+    name=王五&
+    
+    orderNo=o-1008614&
+    
+    orderStatus=50&
+    
+    payMode=ebank&
+    
+    payNo=20200213173023981153464943&
+
+    payStatus=30&
+    
+    payTime=1581586702&
+    
+    sign=3aff08ebde950423acbc267e363588ec&
+    
+    ts=1581585888
