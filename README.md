@@ -83,3 +83,45 @@ returnUrl?<br>
     sign=3aff08ebde950423acbc267e363588ec&
     
     ts=1581585888
+    
+ 异步回调 （notifyUrl）
+ -
+当创建订单时传入异步回调地址时，订单结束后（用户取消订单(-30)、用户支付超时（-40）、订单失败（-50）、订单已完成（50））进行通知，总共通知3次，每次间隔10 分钟，超时时间为10s，处理成功后返回 success，返回其他字符表示处理失败，会继续进行后续通知。通知内容参考统一返回参数，可通过签名算法计算签名的正确性 示例：<br>
+curl -X POST "回调地址"<br>
+  -H 'content-type: application/json' <br>
+  -d '{<br>
+    amount=100&
+    
+    bankName=广发银行&
+    
+    bankNo=62146202210026980&
+    
+    merchantNo=20200113185052721173545318&
+    
+    name=王五&
+    
+    orderNo=o-1008614&
+    
+    orderStatus=50&
+    
+    payMode=ebank&
+    
+    payNo=20200213173023981153464943&
+    
+    payStatus=30&
+    
+    payTime=1581586702&
+    
+    sign=3aff08ebde950423acbc267e363588ec&
+    
+    ts=1581585888
+
+}'
+
+接口内容
+-
+1.创建订单接口
+
+i.使用场景：当商户创建时，根据下面参数，生成订单信息。<br>
+ii.请求地址：网关地址+/cat-pay/open/order<br>
+iii.请求参数
