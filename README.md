@@ -47,7 +47,7 @@ amount=100&merchantNo=20200113185052721173545318&notifyUrl=https%3A%2F%2Fwww.bai
 2.MD5(originalStr + "&key=" + apiKey)
 i.用MD5算法将“originalStr + "&key=" + apiKey”进行签名得到签名信息
 
-3.php demo
+3.[php demo](https://github.com/passpay/passpay/tree/master/php)
 
 4.java demo
 
