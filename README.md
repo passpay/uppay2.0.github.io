@@ -49,7 +49,7 @@ i.用MD5算法将“originalStr + "&key=" + apiKey”进行签名得到签名信
 
 3.[c# demo](https://github.com/passpay/passpay/tree/master/C%23-demo)
 
-4.java demo(https://github.com/passpay/passpay/tree/master/java)
+4.[java demo](https://github.com/passpay/passpay/tree/master/java)
 
 5.[php demo](https://github.com/passpay/passpay/tree/master/php)
 
