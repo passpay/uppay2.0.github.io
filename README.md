@@ -123,126 +123,34 @@ curl -X POST "回调地址"<br>
 1.创建订单接口
 
 i.使用场景：当商户创建时，根据下面参数，生成订单信息。<br>
-ii.请求方式：页面跳转
-iii.请求地址：网关地址+/cat-pay/open/order<br>
+ii.请求方式：POST <br>
+iii.请求地址：网关地址+/cat-pay/open/order  <br>
 iv.请求参数
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>必须</th>
-<th>数据类型</th>
-<th>示例</th>
-<th>参数说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>amount</td>
-<td>是</td>
-<td>整数</td>
-<td>100</td>
-<td>金额,以分为单位；最小值100，即1元</td>
-</tr>
-<tr>
-<td>merchantNo</td>
-<td>是</td>
-<td>字符串</td>
-<td>20200113185052721173545318</td>
-<td>商户编号</td>
-</tr>
-<tr>
-<td>orderNo</td>
-<td>是</td>
-<td>字符串(&lt;50)</td>
-<td>123456789000</td>
-<td>商户订单编号</td>
-</tr>
-<tr>
-<td>payMode</td>
-<td>是</td>
-<td>字符串</td>
-<td>ebank</td>
-<td>支付模式，请登陆商户后台获取</td>
-</tr>
-<tr>
-<td>ts</td>
-<td>是</td>
-<td>整数</td>
-<td>1575948756</td>
-<td>商户订单时间戳（秒级）</td>
-</tr>
-<tr>
-<td>notifyUrl</td>
-<td>否</td>
-<td>字符串</td>
-<td><a href="https://www.baidu.com/notify" rel="nofollow">https://www.baidu.com/notify</a></td>
-<td>后台通知地址</td>
-</tr>
-<tr>
-<td>returnUrl</td>
-<td>否</td>
-<td>字符串</td>
-<td><a href="https://www.baidu.com" rel="nofollow">https://www.baidu.com</a></td>
-<td>支付完成用户返回地址</td>
-</tr>
-<tr>
-<td>sign</td>
-<td>是</td>
-<td>字符串</td>
-<td>2A1FEB481909CBE0CA823D6FA31...</td>
-<td>参数签名，请按照签名算法生成</td>
-</tr>
-</tbody>
-</table>
+
+参数名称  | 必须  | 数据类型 | 示例| 参数说明
+ ---- | ----- | ------  | ------    | ------
+ amount  | 是 | 整数 | 100 | 金额,以分为单位；最小值100，即1元
+ merchantNo  | 是 | 字符串 | 20200113185052721173545318 | 商户编号
+ orderNo  | 是 | 字符串(<50) | 123456789000 | 商户订单编号
+ payMode  | 是 | 字符串 | ebank | 支付模式，请登陆商户后台获取
+ ts  | 是 | 整数 | 1575948756 | 商户订单时间戳（秒级）
+ notifyUrl  | 否 | 字符串 | https://www.baidu.com/notify | 后台通知地址
+ returnUrl  | 否 | 字符串 | https://www.baidu.com | 支付完成用户返回地址
+ sign  | 是 | 字符串 | 2A1FEB481909CBE0CA823D6FA31... | 参数签名，请按照签名算法生成
 
 2.查询订单接口
 
 i.使用场景：查询订单信息。<br>
 ii.请求方式：POST<br>
-iii.请求地址：网关地址+ /cat-pay/open/orde/query<br>
+iii.请求地址：网关地址+ /cat-pay/open/orde/query  <br>
 iv.请求参数
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>必须</th>
-<th>数据类型</th>
-<th>示例</th>
-<th>参数说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>merchantNo</td>
-<td>是</td>
-<td>字符串</td>
-<td>20200113185052721173545318</td>
-<td>商户编号</td>
-</tr>
-<tr>
-<td>orderNo</td>
-<td>是</td>
-<td>字符串(&lt;50)</td>
-<td>123456789000</td>
-<td>商户订单编号</td>
-</tr>
-<tr>
-<td>ts</td>
-<td>是</td>
-<td>整数</td>
-<td>1575948756</td>
-<td>商户订单时间戳（秒级）</td>
-</tr>
-<tr>
-<td>sign</td>
-<td>是</td>
-<td>字符串</td>
-<td>2A1FEB481909CBE0CA823D6FA31...</td>
-<td>参数签名，请按照签名算法生成</td>
-</tr>
-</tbody>
-</table>
+
+参数名称  | 必须  | 数据类型 | 示例| 参数说明
+ ---- | ----- | ------  | ------    | ------
+ merchantNo  | 是 | 字符串 | 20200113185052721173545318 | 商户编号
+ orderNo  | 是 | 字符串(<50) | 123456789000 | 商户订单编号
+ ts  | 是 | 整数 | 1575948756 | 商户订单时间戳（秒级）
+ sign  | 是 | 字符串 | 2A1FEB481909CBE0CA823D6FA31... | 参数签名，请按照签名算法生成
 
 统一返回参数
 -
@@ -287,7 +195,7 @@ iv.请求参数
  30  | 支付成功
  -30  | 支付失败
 
-</ol>
+
 <p><strong>以订单状态为主进行判断，支付超时后状态可能会收到支付成功状态通知，请注意处理</strong></p>
 
 
