@@ -44,8 +44,8 @@ ii.注：value需要进行UrlEncode编码
 amount=100&merchantNo=20200113185052721173545318&notifyUrl=https%3A%2F%2Fwww.baidu.com%2F&orderNo=123456789000&payMode=ebank&returnUrl=https%3A%2F%2Fwww.baidu.com%2F&ts=1581920707&key=06f231e8483243e28296229
 
 
-2.MD5(originalStr + "&key=" + apiKey)
-i.用MD5算法将“originalStr + "&key=" + apiKey”进行签名得到签名信息
+2.DigestUtils.md5Hex(originalStr + "&key=" + apiKey)
+i.用DigestUtils.md5Hex算法将“originalStr + "&key=" + apiKey”进行签名得到签名信息
 
 3.[c# demo](https://github.com/passpay/passpay/tree/master/C%23-demo)
 
