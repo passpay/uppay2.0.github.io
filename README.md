@@ -1,6 +1,6 @@
-pk接口文档(v.200219)
+pk接口文档(v.200220)
 =
-文档内容最后更新于：2020-02-19 
+文档内容最后更新于：2020-02-20 
 
 特别注意：
 -
@@ -34,7 +34,7 @@ pk接口文档(v.200219)
 
 签名（sign）算法
 -
-MD5(originalStr + "&key=" + apiKey)
+DigestUtils.md5Hex(originalStr + "&key=" + apiKey)
 
 1.originalStr: 除sign参数外其他参数值非空（空值或者空字符串）的参数按参数名称字母正序排序然后以name=UrlEncode(value)形式组合， 通过&拼接得到结果将apiKey拼接在最后。<br>
 i.注：空值（空值或者空字符串）不参与签名。<br>
@@ -170,7 +170,7 @@ iv.请求参数
  payNo  | 否 | 字符串 | 20191209194326631108714792 | 支付订单编号
  payStatus  | 否 | 整数 | 30 | 支付状态，请参考支付状态枚举
  payTime  | 否 | 整数 | 1575948756 | 支付成功时间（秒级）
- sign  | 是 | 字符串 | $2a$10$JwOX9nmVHrE6o8vcoSmyd.T6... | 参数签名，使用MD5校验方法校验
+ sign  | 是 | 字符串 | $2a$10$JwOX9nmVHrE6o8vcoSmyd.T6... | 参数签名，使用DigestUtils.md5Hex校验方法校验
  ts  | 是 | 整数 | 1575948756 | 商户订单时间戳（秒级）
  
  
