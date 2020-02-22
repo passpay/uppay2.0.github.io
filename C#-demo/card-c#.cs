@@ -11,6 +11,7 @@ using System.IO;
 class MainClass {
   /**
 	* api key
+  * 联系客服获取测试账户与域名
 	*/
 	public static String API_KEY = "";
 	
@@ -21,7 +22,7 @@ class MainClass {
 		//注2 !!! http|https请使用小写 (错误示例: HTTP, HTTPS) 回调地址正确示例: https://www.baidu.com  回调地址错误示例: HTTPS://www.baidu.com
 		
 		//创建订单
-		//CreateOrder();
+		CreateOrder();
 		
 		
 		//查询订单
@@ -29,12 +30,12 @@ class MainClass {
 		
 		
 		//回调验签
-		CallbackVerify();
+		//CallbackVerify();
 	}
 	
 	
 	/**
-	 *	创建订单
+	 *	创建订单, 页面跳转形式
 	 */
 	public static void CreateOrder()
 	{
@@ -57,27 +58,11 @@ class MainClass {
 		//签名
 		String signStr = Sign(API_KEY, paramsOrder);
 		//UrlEncode
-		//signStr = WebUtility.UrlEncode(signStr);
-
-		String jsonData = "{\"orderNo\":\"" + ts + "\",\"amount\":\"100\",\"merchantNo\":\"20200113185052721173545318\",\"payMode\":\"ebank\",\"ts\":\"" + ts + "\",\"notifyUrl\":\"https://www.baidu.com/\",\"returnUrl\":\"https://www.baidu.com/\",\"sign\":\"" + signStr + "\"}";
-			
-
+		signStr = WebUtility.UrlEncode(signStr);
 		//请求地址
-		String host = "/open/order";
-
-		var request = (HttpWebRequest)WebRequest.Create(host);
-		request.Method = "POST";
-		request.ContentType = "application/json;charset=UTF-8";
-		var byteData = Encoding.UTF8.GetBytes(jsonData);
-		var length = byteData.Length;
-		request.ContentLength = length;
-		var writer = request.GetRequestStream();
-		writer.Write(byteData, 0, length);
-		writer.Close();
-		var response = (HttpWebResponse)request.GetResponse();
-		//查询结果
-		var responseString = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("utf-8")).ReadToEnd();
-		Console.WriteLine(responseString);		
+    String s = "http://1234/#/create?" + paramsOrder + "&sign=" + signStr;
+    Console.WriteLine(s);		
+  
 	}
 	
 	
