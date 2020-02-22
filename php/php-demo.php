@@ -1,13 +1,15 @@
 <?php
 
 $apiKey = '';
-$url = 'Íø¹ØµØÖ·/cat-pay/open/order';
+//ç½‘å…³åœ°å€ï¼Œè¯·è”ç³»å®¢æœ
+$host = '';
+$merchant_no = "";
 
 echo "\n";
-print_r("==================¶©µ¥´´½¨==================");
+print_r("==================è®¢å•åˆ›å»º==================");
 $array = array(
-    'orderNo'=>'1565966096750',
-    'merchantNo'=>'20200113185052721173545318',
+    'orderNo'=>'1582352920518',
+    'merchantNo'=>$merchant_no,
     'amount'=>700,
     'payMode'=>'ebank',
     'ts'=>strtotime(date('Y-m-d H:i:s')),
@@ -15,49 +17,49 @@ $array = array(
     'returnUrl'=>'https://www.baidu.com/');
 print_r($array);
 echo "\n";
-$sign_reduce=generate_sign_reduce($array,$apiKey);
+$sign_reduce=generate_sign_reduce($array);
 echo "sign_reduce:".$sign_reduce;
 echo "\n";
-$sign = md5($sign_reduce);
+$sign = md5($sign_reduce.'key='.$apiKey);
 echo "sign:".$sign;
-//ÏòÊý×éÀïÌí¼Ósign
+//å‘æ•°ç»„é‡Œæ·»åŠ sign
 $array['sign']=$sign;
 print_r($array);
 
-$result = json_post($array);
-echo"´´½¨·µ»Ø½á¹û:".$result;
+$create_order_link = $host.'/pk-order/#/create?'.$sign_reduce.'sign='.$sign;
+echo "åˆ›å»ºè®¢å•é“¾æŽ¥------>".$create_order_link;
 
 
 echo "\n\n";
-print_r("==================¶©µ¥²éÑ¯==================");
+print_r("==================è®¢å•æŸ¥è¯¢==================");
 
-$GLOBALS['url'] = $url = $url.'/query';
+$url = $host.'/cat-pay/open/order/query';
 $array = array(
-    'merchantNo'=>'20200113185052721173545318',
-    'orderNo'=>'1581829465',
+    'merchantNo'=>$merchant_no,
+    'orderNo'=>'1582352920518',
     'ts'=>strtotime(date('Y-m-d H:i:s'))
     );
 print_r($array);
 
-$sign_reduce=generate_sign_reduce($array,$apiKey);
+$sign_reduce=generate_sign_reduce($array);
 echo "sign_reduce:".$sign_reduce;
 echo "\n";
-$sign = md5($sign_reduce);
+$sign = md5($sign_reduce.'key='.$apiKey);
 echo "sign:".$sign;
 
-//ÏòÊý×éÀïÌí¼Ósign
+//å‘æ•°ç»„é‡Œæ·»åŠ sign
 $array['sign']=$sign;
 print_r($array);
 
-$result = json_post($array);
-echo"¶©µ¥²éÑ¯½á¹û:".$result;
+$result = json_post($array,$url);
+echo"è®¢å•æŸ¥è¯¢ç»“æžœ:".$result;
 
-function json_post($array){
-    //×ªjson
+function json_post($array,$url){
+    //è½¬json
     $params = json_encode($array);
-    //Ê¹ÓÃCURL·¢ÆðpsotÇëÇó 
+    //ä½¿ç”¨CURLå‘èµ·psotè¯·æ±‚ 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $GLOBALS['url']);
+    curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
         'Content-Length: ' . strlen($params)
@@ -72,10 +74,10 @@ function json_post($array){
     curl_close($ch);
 }
 
-function generate_sign_reduce($array,$apiKey){
-//°´¼üË³ÐòÕýÐòÅÅÐò
+function generate_sign_reduce($array){
+//æŒ‰é”®é¡ºåºæ­£åºæŽ’åº
 ksort($array);
-//Æ´½Ó 
+//æ‹¼æŽ¥ 
 $original_str = '';
 foreach ($array as $key=>$value) {
     if(!empty($value) && 'sign'!=$key){
@@ -83,18 +85,18 @@ foreach ($array as $key=>$value) {
     }
 }
     echo "\n";
-    return $original_str = $original_str.'key='.$apiKey;
+    return $original_str;
     echo "original_str:".$original_str; 
 }
 
 echo "\n\n";
-print_r("==================ÑéÖ¤Ç©Ãû==================");
-$json = '{"amount":100,"orderNo":"1581829465","merchantNo":"20200113185052721173545318","ts":1581829465,"payNo":"20200216130427150117195677","payStatus":30,"payMode":"ebank","orderStatus":50,"payTime":1581831208,"sign":"558417f30af769527447632ca93c5753","name":"ÕÅÈý","bankNo":"621700720009306698","bankName":"½¨ÉèÒøÐÐ"}';
-//½«json´®×ª»¯³ÉÊý×é
+print_r("==================éªŒè¯ç­¾å==================");
+$json = '{"amount":700,"orderNo":"1582352920518","merchantNo":"20200206151935264177807110","ts":1582354455,"payNo":"20200222145449450132236190","payStatus":-10,"payMode":"ebank","orderStatus":-40,"payTime":null,"sign":"3eba4517fa0a3ea71b17ee5ab0fe9248","name":"å¤§æµ·","bankNo":"6226620412731135","bankName":"ä¸­å›½å…‰å¤§é“¶è¡Œ"}';
+//å°†jsonä¸²è½¬åŒ–æˆæ•°ç»„
 $verify_array=json_decode($json,true);
 print_r($verify_array);
 echo "\n";
-//»ñÈ¡signÖµ
+//èŽ·å–signå€¼
 foreach($verify_array as $key=>$value){
     if($key=='sign'){
        $get_sign= $value;
@@ -102,10 +104,10 @@ foreach($verify_array as $key=>$value){
     }
 }
 echo "\n";
-$sign_reduce=generate_sign_reduce($verify_array,$apiKey);
+$sign_reduce=generate_sign_reduce($verify_array);
 echo "sign_reduce:".$sign_reduce;
 echo "\n";
-$sign = md5($sign_reduce);
+$sign = md5($sign_reduce.'key='.$apiKey);
 echo "sign:".$sign;
 
 echo "\n";
