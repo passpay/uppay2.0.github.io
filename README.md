@@ -90,6 +90,7 @@ returnUrl?<br>
 curl -X POST "回调地址"<br>
   -H 'content-type: application/json' <br>
   -d '{<br>
+  
     amount=100&
     
     bankName=广发银行&
