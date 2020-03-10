@@ -60,7 +60,7 @@ class MainClass {
 		//UrlEncode
 		signStr = WebUtility.UrlEncode(signStr);
 		//请求地址
-    String s = "http://1234/#/create?" + paramsOrder + "&sign=" + signStr;
+    String s = "网关地址+/pk-order/#/create?" + paramsOrder + "&sign=" + signStr;
     Console.WriteLine(s);		
   
 	}
