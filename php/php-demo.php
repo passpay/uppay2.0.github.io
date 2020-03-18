@@ -12,7 +12,7 @@ $array = array(
     'merchantNo'=>$merchant_no,
     'amount'=>700,
     'payMode'=>'ebank',
-    'ts'=>strtotime(date('Y-m-d H:i:s')),
+    'ts'=>time(),
     'notifyUrl'=>'https://www.baidu.com/',
     'returnUrl'=>'https://www.baidu.com/');
 print_r($array);
@@ -37,7 +37,7 @@ $url = $host.'/cat-pay/open/order/query';
 $array = array(
     'merchantNo'=>$merchant_no,
     'orderNo'=>'1582352920518',
-    'ts'=>strtotime(date('Y-m-d H:i:s'))
+    'ts'=>time()
     );
 print_r($array);
 
