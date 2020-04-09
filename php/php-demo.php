@@ -14,7 +14,7 @@ $array = array(
     'payMode'=>'ebank',
     'ts'=>time(),
     'notifyUrl'=>'https://www.baidu.com/',
-    'returnUrl'=>'https://www.baidu.com/');
+    'returnUrl'=>'');
 print_r($array);
 echo "\n";
 $sign_reduce=generate_sign_reduce($array);
@@ -80,7 +80,7 @@ ksort($array);
 //拼接 
 $original_str = '';
 foreach ($array as $key=>$value) {
-    if(!empty($value) && strcasecmp('sign',$key) == 0){
+    if(!empty($value) && strcasecmp('sign',$key) != 0){
         $original_str.=$key.'='.urlencode($value).'&';
     }
 }
