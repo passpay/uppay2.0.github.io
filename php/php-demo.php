@@ -80,7 +80,7 @@ ksort($array);
 //拼接 
 $original_str = '';
 foreach ($array as $key=>$value) {
-    if(!empty($value) && 'sign'!=$key){
+    if(!empty($value) && strcasecmp('sign',$key) == 0){
         $original_str.=$key.'='.urlencode($value).'&';
     }
 }
