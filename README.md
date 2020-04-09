@@ -203,7 +203,7 @@ iv.请求参数
 
 i.使用场景：商户银行卡下发<br>
 ii.请求方式：POST <br>
-iii.请求地址：网关地址+/cat-pay/open/order/issue-apply  <br>
+iii.请求地址：网关地址+/cat-pay/open/order/issue-create  <br>
 iv.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
