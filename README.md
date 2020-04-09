@@ -55,7 +55,7 @@ i.用DigestUtils.md5Hex算法将“originalStr + "key=" + apiKey”进行加密�
 
 同步通知 （returnUrl）
 -
-当创建订单时传入返回地址，订单结束后，用户点击“返回商户”，会在返回链接带上参数（returnUrl?urlparams）。参数内容参考统一返回参数，可通过签名算法计算签名的正确性。例：<br>
+当创建订单时传入返回地址，订单结束后，用户点击“返回商户”，会在返回链接带上参数（returnUrl?urlparams）。参数内容参考[统一返回参数](https://github.com/passpay/passpay/#%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E5%8F%82%E6%95%B0)，可通过签名算法计算签名的正确性。例：<br>
 returnUrl?<br>
 
     amount=100&
