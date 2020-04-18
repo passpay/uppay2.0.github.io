@@ -204,8 +204,8 @@ iv.请求参数
 i.使用场景：商户银行卡下发<br>
 ii.请求方式：POST <br>
 iii.请求地址：网关地址+/cat-pay/open/order/issue-create  <br>
-iiii.Content-Type：application/json  <br>
-iv.请求参数
+iv.Content-Type：application/json  <br>
+v.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
  ---- | ----- | ------  | ------    | ------
@@ -218,15 +218,15 @@ iv.请求参数
  ts  | 是 | 整数 | 1581397518 | 商户订单时间戳（秒级）
  sign  | 是 | 字符串 | $2a$10$GLvMhH7Vr9zSP7CRE... | 参数签名，请按照签名算法生成
  
-v. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9)
+vi. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9)
 
 1.下发查询
 
 i.使用场景：商户银行卡下发查询<br>
 ii.请求方式：POST <br>
 iii.请求地址：网关地址+/cat-pay/open/order/issue-query  <br>
-iiii.Content-Type：application/json  <br>
-iv.请求参数
+iv.Content-Type：application/json  <br>
+v.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
  ---- | ----- | ------  | ------    | ------
@@ -235,7 +235,7 @@ iv.请求参数
  ts  | 是 | 整数 | 1581397518 | 商户订单时间戳（秒级）
  sign  | 是 | 字符串 | $2a$10$GLvMhH7Vr9zSP7CRE... | 参数签名，请按照签名算法生成
 
-v. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9)
+vi. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9)
 
 
 响应内容
