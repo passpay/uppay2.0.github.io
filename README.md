@@ -248,6 +248,9 @@ v. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%
  type  | 是 | 字符串 | WITHDRAW | 类型
  applyNo  | 是 | 字符串 | 20200312145436250122823556 | 申请编号
  amount  | 是 | 整数 | 1000 | 金额（分）
+ bankNo  | 是 | 字符串 | 62301234567890000 | 类型
+ bankName  | 否 | 字符串 | 中国农业银行 | 类型
+ bankUser  | 否 | 字符串 | 张三 | 类型
  serviceCharge  | 是 | 整数 | 300 | 服务费金额（分）
  applyStatus  | 是 | 整数 | 10 | 申请状态
  
@@ -262,5 +265,5 @@ v. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%
  
   3.示例
   
-  {"amount":11700,"applyNo":"20200312145436250122823556","applyStatus":10,"serviceCharge":300,"type":"WITHDRAW"}
+  {"type":"WITHDRAW","applyNo":"20200418145318880183583368","amount":700,"serviceCharge":300,"bankNo":"62301234567890000","bankName":"中国农业银行","bankUser":"张三","applyStatus":10}
  
