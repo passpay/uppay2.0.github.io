@@ -204,6 +204,7 @@ iv.请求参数
 i.使用场景：商户银行卡下发<br>
 ii.请求方式：POST <br>
 iii.请求地址：网关地址+/cat-pay/open/order/issue-create  <br>
+iiii.Content-Type：application/json  <br>
 iv.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
@@ -224,6 +225,7 @@ v. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%
 i.使用场景：商户银行卡下发查询<br>
 ii.请求方式：POST <br>
 iii.请求地址：网关地址+/cat-pay/open/order/issue-query  <br>
+iiii.Content-Type：application/json  <br>
 iv.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
