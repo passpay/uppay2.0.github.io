@@ -143,6 +143,7 @@ iv.请求参数
 
 i.使用场景：查询订单信息。<br>
 ii.请求方式：POST<br>
+iii.Content-Type：application/json
 iii.请求地址：网关地址+ /cat-pay/open/orde/query  <br>
 iv.请求参数
 
