@@ -144,7 +144,7 @@ iv.请求参数
 i.使用场景：查询订单信息。<br>
 ii.请求方式：POST<br>
 iii.Content-Type：application/json<br>
-iii.请求地址：网关地址+ /cat-pay/open/orde/query  <br>
+iii.请求地址：网关地址+ /cat-pay/open/order/query  <br>
 iv.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
