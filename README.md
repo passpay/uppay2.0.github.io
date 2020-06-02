@@ -1,6 +1,6 @@
-pk接口文档(v.200518)
+pk接口文档(v.200602)
 =
-文档内容最后更新于：2020-05-18 
+文档内容最后更新于：2020-06-02 
 
 <span style="color:red !important;"> 特别注意：</span>
 -
@@ -80,6 +80,8 @@ returnUrl?<br>
     
     payTime=1581586702&
     
+    postscript=123456&
+    
     sign=3aff08ebde950423acbc267e363588ec&
     
     ts=1581585888
@@ -112,6 +114,8 @@ curl -X POST "回调地址"<br>
     payStatus=30&
     
     payTime=1581586702&
+    
+    postscript=123456&
     
     sign=3aff08ebde950423acbc267e363588ec&
     
@@ -171,6 +175,7 @@ iv.请求参数
  payNo  | 否 | 字符串 | 20191209194326631108714792 | 支付订单编号
  payStatus  | 否 | 整数 | 30 | 支付状态，请参考支付状态枚举
  payTime  | 否 | 整数 | 1575948756 | 支付成功时间（秒级）
+ postscript  | 否 | 字符串 | 123456 | 附言
  sign  | 是 | 字符串 | $2a$10$JwOX9nmVHrE6o8vcoSmyd.T6... | 参数签名，使用DigestUtils.md5Hex校验方法校验
  ts  | 是 | 整数 | 1575948756 | 商户订单时间戳（秒级）
  
