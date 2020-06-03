@@ -246,6 +246,30 @@ v.请求参数
 vi. 响应:参考[响应内容](https://github.com/passpay/passpay/#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9)
 
 
+1.商户下发查询余额
+
+i.使用场景：商户下发查询余额<br>
+ii.请求方式：POST <br>
+iii.请求地址：网关地址+/cat-pay/open/order/issue-balance  <br>
+iv.Content-Type：application/json  <br>
+v.请求参数
+
+参数名称  | 必须  | 数据类型 | 示例| 参数说明
+ ---- | ----- | ------  | ------    | ------
+ merchantNo  | 是 | 字符串 | 20200221093008088186315303 | 商户编号
+ ts  | 是 | 整数 | 1581397518 | 商户订单时间戳（秒级）
+ sign  | 是 | 字符串 | $2a$10$GLvMhH7Vr9zSP7CRE... | 参数签名，请按照签名算法生成
+
+vi. 响应:
+参数名称  | 必须  | 数据类型 | 示例| 参数说明
+ ---- | ----- | ------  | ------    | ------
+ balance  | 是 | long | 3000 | 账户可用余额
+ frozenAmt  | 是 | long | 1000 | 账户冻结金额
+ withdrawAmt  | 是 | long | 2000 | 累计提现金额
+
+
+
+
 响应内容
 -
 
