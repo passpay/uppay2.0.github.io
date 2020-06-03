@@ -1,6 +1,6 @@
-pk接口文档(v.200602)
+pk接口文档(v.200603)
 =
-文档内容最后更新于：2020-06-02 
+文档内容最后更新于：2020-06-03
 
 <span style="color:red !important;"> 特别注意：</span>
 -
@@ -88,38 +88,38 @@ returnUrl?<br>
     
  异步回调 （notifyUrl）
  -
-当创建订单时传入异步回调地址时，订单结束后（用户取消订单(-30)、用户支付超时（-40）、订单失败（-50）、订单已完成（50））进行通知，总共通知3次，每次间隔10 分钟，超时时间为10s，处理成功后返回 success，返回其他字符表示处理失败，会继续进行后续通知。通知内容参考[统一返回参数](https://github.com/passpay/passpay/#%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E5%8F%82%E6%95%B0)，可通过签名算法计算签名的正确性 例：<br>
+当创建订单时传入异步回调地址时，订单结束后（用户取消订单(-30)、用户支付超时（-40）、订单失败（-50）、订单已完成（50））进行通知，总共通知3次，间隔时间分别为0s,15s,60s，超时时间为10s，处理成功后返回 success，返回其他字符表示处理失败，会继续进行后续通知。通知内容参考[统一返回参数](https://github.com/passpay/passpay/#%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E5%8F%82%E6%95%B0)，可通过签名算法计算签名的正确性 例：<br>
 curl -X POST "回调地址"<br>
   -H 'content-type: application/json' <br>
   -d '{<br>
   
-    amount=100&
+    "amount":100,
     
-    bankName=广发银行&
+    "bankName":"广发银行",
     
-    bankNo=62146202210026980&
+    "bankNo":"62146202210026980",
     
-    merchantNo=20200113185052721173545318&
+    "merchantNo":"20200113185052721173545318",
     
-    name=王五&
+    "name":"王五",
     
-    orderNo=o-1008614&
+    "orderNo":"o-1008614",
     
-    orderStatus=50&
+    "orderStatus":50,
     
-    payMode=ebank&
+    "payMode":"ebank",
     
-    payNo=20200213173023981153464943&
+    "payNo":"20200213173023981153464943",
     
-    payStatus=30&
+    "payStatus":30,
     
-    payTime=1581586702&
+    "payTime":1581586702,
     
-    postscript=123456&
+    "postscript":"123456",
     
-    sign=3aff08ebde950423acbc267e363588ec&
+    "sign":"3aff08ebde950423acbc267e363588ec",
     
-    ts=1581585888
+    "ts":1581585888
 
 }'
 
@@ -148,8 +148,8 @@ iv.请求参数
 i.使用场景：查询订单信息。<br>
 ii.请求方式：POST<br>
 iii.Content-Type：application/json<br>
-iii.请求地址：网关地址+ /cat-pay/open/order/query  <br>
-iv.请求参数
+iv.请求地址：网关地址+ /cat-pay/open/order/query  <br>
+v.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
  ---- | ----- | ------  | ------    | ------
