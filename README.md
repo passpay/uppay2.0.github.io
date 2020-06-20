@@ -129,7 +129,7 @@ curl -X POST "回调地址"<br>
 
 i.使用场景：当商户创建时，根据下面参数，生成订单信息。<br>
 ii.请求方式：页面跳转 <br>
-iii.请求地址：网关地址+/pk-order/#/create?urlparams  <br>
+iii.请求地址：网关地址+/pass-order/#/create?urlparams  <br>
 iv.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
