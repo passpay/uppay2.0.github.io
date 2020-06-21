@@ -66,7 +66,7 @@ returnUrl?<br>
     
     merchantNo=20200113185052721173545318&
     
-    name=王五&
+    productName=王五&
     
     orderNo=o-1008614&
     
@@ -101,7 +101,7 @@ curl -X POST "回调地址"<br>
     
     "merchantNo":"20200113185052721173545318",
     
-    "name":"王五",
+    "productName":"王五",
     
     "orderNo":"o-1008614",
     
@@ -168,7 +168,7 @@ v.请求参数
  bankName  | 否 | 字符串 | 广发银行 | 银行名称
  bankNo  | 是 | 字符串(<50) | 62146202210026980 | 银行卡号
  merchantNo  | 是 | 字符串 | 20200113185052721173545318 | 商户编号
- name  | 是 | 字符串 | 王五 | 产品名称
+ productName  | 是 | 字符串 | 王五 | 产品名称
  orderNo  | 是 | 字符串 | 201912081855183951ab02e | 商户订单编号
  orderStatus  | 是 | 整数 | 50 | 订单状态，请参考订单状态枚举
  payMode  | 是 | 字符串 | ebank | 支付模式：网银
