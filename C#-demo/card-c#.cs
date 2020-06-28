@@ -60,7 +60,7 @@ class MainClass {
 		//UrlEncode
 		signStr = WebUtility.UrlEncode(signStr);
 		//请求地址
-    String s = "网关地址+/pk-order/#/create?" + paramsOrder + "&sign=" + signStr;
+    String s = "网关地址+/pass-order/#/create?" + paramsOrder + "&sign=" + signStr;
     Console.WriteLine(s);		
   
 	}
@@ -73,7 +73,7 @@ class MainClass {
 	 */
 	public static void QueryOrder()
 	{
-		String host = "/open/order/query";
+		String host = "/pass-pay/open/order/query";
 		String ts = ((DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000) + "";
 		SortedDictionary<string, string> parameters = new SortedDictionary<string, string>();
 		parameters.Add("orderNo", "o-10086140");
