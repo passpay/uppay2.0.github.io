@@ -26,14 +26,14 @@ echo "sign:".$sign;
 $array['sign']=$sign;
 print_r($array);
 
-$create_order_link = $host.'/pk-order/#/create?'.$sign_reduce.'sign='.$sign;
+$create_order_link = $host.'/pass-pay/pass-order/#/create?'.$sign_reduce.'sign='.$sign;
 echo "创建订单链接------>".$create_order_link;
 
 
 echo "\n\n";
 print_r("==================订单查询==================");
 
-$url = $host.'/cat-pay/open/order/query';
+$url = $host.'/pass-pay/open/order/query';
 $array = array(
     'merchantNo'=>$merchant_no,
     'orderNo'=>'1582352920518',
