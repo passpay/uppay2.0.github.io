@@ -57,7 +57,7 @@ public class JavaDemo {
 
         //链接跳转形式, 域名请联系客服
         //host + /#/create?amount=100&merchantNo=20200113185052721173545318&notifyUrl=baidu.com&orderNo=1582342812127&payMode=ebank&returnUrl=baidu.com&ts=1582342812&sign=126a8a129faff7d71a1e2208f5c938fb
-        String s = "网关地址+/pk-order/#/create?" + signReduce + "&sign=" + sign;
+        String s = "网关地址+/pass-order/#/create?" + signReduce + "&sign=" + sign;
         System.out.println(s);
     }
 
@@ -65,7 +65,7 @@ public class JavaDemo {
      * 查询订单
      */
     public static void queryOrder() {
-        String host = "queryHost/open/order/query";
+        String host = "queryHost/pass-order/open/order/query";
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("orderNo", "1581829465");
         jsonObject.put("merchantNo", MERCHANT_NO);
