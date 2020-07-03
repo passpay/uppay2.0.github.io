@@ -300,3 +300,45 @@ vi. 响应:
   
   {"type":"WITHDRAW","orderNo":"1234567","applyNo":"20200418145318880183583368","amount":700,"serviceCharge":300,"bankNo":"62301234567890000","bankName":"中国农业银行","bankUser":"张三","applyStatus":10}
  
+ 
+ 
+3.新下发api内容
+-
+1.银行卡下发
+
+i.使用场景：商户银行卡下发<br>
+ii.请求方式：POST <br>
+iii.请求地址：网关地址+/pass-pay/open/order/v2/issue-create  <br>
+iv.Content-Type：application/json  <br>
+v.请求参数
+
+参数名称  | 必须  | 数据类型 | 示例| 参数说明
+ ---- | ----- | ------  | ------    | ------
+ merchantNo  | 是 | 字符串 | 20200221093008088186315303 | 商户编号
+ orderNo  | 否 | 字符串 | 1234567890 | 商户订单编号
+ bankName  | 否 | 字符串 | 平安银行 | 银行名称
+ bankNo  | 是 | 字符串(<50) | 6230580000270144210 | 银行卡号
+ bankUser  | 是 | 字符串 | 张三 | 持卡人
+ passwd  | 是 | 字符串 | MD5(密码) | 提现密码（需要md5）
+ amount  | 是 | 整数(500000-5000000) | 500000 | 金额（分）
+ ts  | 是 | 整数 | 1581397518 | 商户订单时间戳（秒级）
+ sign  | 是 | 字符串 | $2a$10$GLvMhH7Vr9zSP7CRE... | 参数签名，请按照签名算法生成
+ 
+vi. 响应:参考[响应内容](https://github.com/passpay/uppay2.0.github.io/#%E5%93%8D%E5%BA%94%E5%86%85%E5%AE%B9)
+
+ 
+ 2.枚举值
+ 
+ i.申请状态(applyStatus)<br>
+ 值  | 说明  
+ ---- | -----   
+ 11  | 等待抢单
+ 12  | 等待支付(已抢单)
+ 13  | 支付中(抢单人已确认支付)
+ -14  | 用户取消申请
+ 20  | 成功
+ 
+  3.示例
+  {"type":"WITHDRAW","orderNo":"1234567","applyNo":"20200418145318880183583368","amount":700,"serviceCharge":300,"bankNo":"62301234567890000","bankName":"中国农业银行","bankUser":"张三","applyStatus":11}
+ 
+ 
