@@ -242,6 +242,9 @@ v.请求参数
  serviceCharge  | 是 | 整数 | 300 | 服务费金额（分）
  applyStatus  | 是 | 整数 | 11 | 申请状态
  
+  3.示例
+  {"type":"WITHDRAW","orderNo":"1234567","applyNo":"20200418145318880183583368","amount":700,"serviceCharge":300,"bankNo":"62301234567890000","bankName":"中国农业银行","bankUser":"张三","applyStatus":11}
+ 
  
 2.下发查询 <br>
   
@@ -271,10 +274,13 @@ v.请求参数
  bankUser  | 是 | 字符串 | 张三 | 类型
  type  | 是 | 字符串 | WITHDRAW | 类型
  amount  | 是 | 整数 | 1000 | 金额（分）
- realAmount  | 是 | 整数 | 1000 | 实际到账金额（分）
  serviceCharge  | 是 | 整数 | 300 | 服务费金额（分）
  applyStatus  | 是 | 整数 | 11 | 申请状态
  voucherUrl | 否 | 字符串 | https://baidu.com/photo.jpg | 凭证地址
+ 
+  3.示例
+  {"applyNo":"20200418145318880183583368","orderNo":"1234567","userNo":"1234567890","bankNo":"62122666666666","bankName":"中国银行","bankUser":"张三","type":"WITHDRAW","amount":10000,serviceCharge":300,"applyStatus":20,"voucherUrl":"https://baidu.com/photo.jpg"}
+  
  
  1.商户下发查询余额
 
@@ -308,9 +314,7 @@ vi. 响应:
  -14  | 用户取消申请
  20  | 成功
 
- 
-  3.示例
-  {"type":"WITHDRAW","orderNo":"1234567","applyNo":"20200418145318880183583368","amount":700,"serviceCharge":300,"bankNo":"62301234567890000","bankName":"中国农业银行","bankUser":"张三","applyStatus":11}
+
 
 
 
