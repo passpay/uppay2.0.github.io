@@ -247,7 +247,7 @@ v.请求参数
   
 i.使用场景：商户银行卡下发查询<br>
 ii.请求方式：POST <br>
-iii.请求地址：网关地址+/pass-pay/open/order/issue-query  <br>
+iii.请求地址：网关地址+/pass-pay/open/order/v2/issue-query  <br>
 iv.Content-Type：application/json  <br>
 v.请求参数
 
@@ -263,15 +263,18 @@ v.请求参数
 
 参数名称  | 必须  | 数据类型 | 示例| 参数说明
  ---- | ----- | ------  | ------    | ------
- type  | 是 | 字符串 | WITHDRAW | 类型
  applyNo  | 是 | 字符串 | 20200312145436250122823556 | 申请编号
  orderNo  | 否 | 字符串 | 1234567890 | 商户订单编号
- amount  | 是 | 整数 | 1000 | 金额（分）
+ userNo | 是 | 字符串 | 20200312145436250112345 | 商户编号
  bankNo  | 是 | 字符串 | 62301234567890000 | 类型
  bankName  | 否 | 字符串 | 中国农业银行 | 类型
  bankUser  | 是 | 字符串 | 张三 | 类型
+ type  | 是 | 字符串 | WITHDRAW | 类型
+ amount  | 是 | 整数 | 1000 | 金额（分）
+ realAmount  | 是 | 整数 | 1000 | 实际到账金额（分）
  serviceCharge  | 是 | 整数 | 300 | 服务费金额（分）
  applyStatus  | 是 | 整数 | 11 | 申请状态
+ voucherUrl | 否 | 字符串 | https://baidu.com/photo.jpg | 凭证地址
  
  1.商户下发查询余额
 
