@@ -75,8 +75,6 @@ returnUrl?<br>
     orderStatus=50&
     
     payMode=ebank&
-    
-    payNo=20200213173023981153464943&
 
     payStatus=30&
     
@@ -110,14 +108,12 @@ curl -X POST "回调地址"<br>
     "orderStatus":50,
     
     "payMode":"ebank",
-    
-    "payNo":"20200213173023981153464943",
-    
+       
     "payStatus":30,
     
     "payTime":1581586702,
     
-    "postscript":"123456",
+    "postscript":"12345",
     
     "sign":"3aff08ebde950423acbc267e363588ec",
     
@@ -184,6 +180,7 @@ v.请求参数
  ts  | 是 | 整数 | 1575948756 | 商户订单时间戳（秒级）
  
  
+**以订单状态（orderStatus）为主进行判断，支付超时后状态可能会收到支付成功状态通知，请注意处理**
 2.订单状态（orderStatus）枚举
 
 值  | 说明  
@@ -203,9 +200,6 @@ v.请求参数
  -20  | 支付取消
  30  | 支付成功
  -30  | 支付失败
-
-
-**以订单状态(orderStatus)为主进行判断，支付超时后状态可能会收到支付成功状态通知，请注意处理**
 
 
 
