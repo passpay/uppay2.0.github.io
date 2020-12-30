@@ -36,7 +36,7 @@
 
 签名（sign）算法
 -
-DigestUtils.md5Hex(originalStr + "key=" + apiKey)
+DigestUtils.md5Hex(originalStr + "&key=" + apiKey)
 
 1.originalStr: 除sign参数外其他参数值非空（空值或者空字符串）的参数按参数名称字母正序排序然后以name=UrlEncode(value)形式组合， 通过&拼接得到结果将apiKey拼接在最后。<br>
 i.注：空值（空值或者空字符串）不参与签名。<br>
@@ -46,8 +46,8 @@ ii.注：value需要进行UrlEncode编码
 amount=100&merchantNo=20200113185052721173545318&notifyUrl=https%3A%2F%2Fwww.baidu.com%2F&orderNo=123456789000&payMode=ebank&returnUrl=https%3A%2F%2Fwww.baidu.com%2F&ts=1581920707&key=06f231e8483243e28296229
 
 
-2.DigestUtils.md5Hex(originalStr + "key=" + apiKey) <br>
-i.用DigestUtils.md5Hex算法将“originalStr + "key=" + apiKey”进行加密得到签名信息
+2.DigestUtils.md5Hex(originalStr + "&key=" + apiKey) <br>
+i.用DigestUtils.md5Hex算法将“originalStr + "&key=" + apiKey”进行加密得到签名信息
 
 3.[c# demo](https://github.com/passpay/uppay2.0.github.io/tree/master/C%23-demo)
 
